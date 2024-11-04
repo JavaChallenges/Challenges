@@ -12,6 +12,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Get commit Hash
+        id: commit
+        uses: pr-mpt/actions-commit-hash@v1
       - name: Checkout
         uses: actions/checkout@v2
       -
@@ -26,3 +29,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "challenges.tar.gz"
+          commit: 'master'
+          tag: "${{ steps.commit.outputs.short }}"
