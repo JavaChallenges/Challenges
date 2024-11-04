@@ -1,0 +1,53 @@
+name: docker-build-and-publish
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+    steps:
+      -
+        name: Get commit Hash
+        id: commit
+        uses: pr-mpt/actions-commit-hash@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.commit.outputs.short }}
+          release_name: Release ${{ steps.commit.outputs.short }}
+          body: |
+            Current version of the JavaChallenges
+          draft: false
+          prerelease: false
+      -
+        name: Zip
+        uses: vimtor/action-zip@v1
+        with:
+          recursive: true
+          files: ./*
+          dest: ajanservice-${{ steps.commit.outputs.short }}.zip
+      -
+        name: upload release zip
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./ajanservice-${{ steps.commit.outputs.short }}.zip
+          asset_name: ajanservice-${{ steps.commit.outputs.short }}.zip
+          asset_content_type: application/zip
