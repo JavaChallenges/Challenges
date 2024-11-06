@@ -6,28 +6,19 @@ on:
       - 'master'
 
 jobs:
-  release:
-    name: Create Release
+  deploy:
+    name: deploy image
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
-      - name: Get commit Hash
-        id: commit
-        uses: pr-mpt/actions-commit-hash@v1
-      - name: Checkout
-        uses: actions/checkout@v2
-      -
-        name: Zip
-        uses: vimtor/action-zip@v1
-        with:
-          recursive: true
-          files: ./*
-          dest: challenges.zip
-      -
-        name: Create Release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "challenges.tar.gz"
-          commit: 'master'
-          tag: "${{ steps.commit.outputs.short }}"
+      - name: install ssh keys
+        # check this thread to understand why its needed:
+        # <https://stackoverflow.com/a/70447517>
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.ARTIFACT_SSH_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.ARTIFACT_HOST }} > ~/.ssh/known_hosts
+      - name: connect and restart
+        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "cd ${{ secrets.APP_PATH }} && docker compose down && docker compose up -d && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh

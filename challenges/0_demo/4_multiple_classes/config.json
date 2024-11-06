@@ -1,6 +1,7 @@
 {
   "friendlyName": "Beispiel mehrere Klassen",
   "difficulty": "4",
+  "shortDescription": "Beispiel für eine Aufgabe mit mehreren Klassen",
   "templates": [
     {
       "title": "Main.class:",

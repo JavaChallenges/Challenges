@@ -1,6 +1,7 @@
 {
   "friendlyName": "Markdown Showcase",
   "difficulty": "1",
+  "shortDescription": "Demonstration der Möglichkeiten von Markdown",
   "templates": [
     {
       "title": "Eingabe Codeblock",
