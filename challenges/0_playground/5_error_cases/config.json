@@ -1,0 +1,12 @@
+{
+  "friendlyName": "Fehlertypen",
+  "difficulty": "5",
+  "shortDescription": "Beispielansicht für die verschiedenen Fehlertypen",
+  "templates": [
+    {
+      "title": "Beispielcode:",
+      "classname": "Main",
+      "content": " //Bespielcode hier einfügen"
+    }
+  ]
+}
