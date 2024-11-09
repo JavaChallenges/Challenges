@@ -37,4 +37,4 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/
-/challenges/0_playground/
+/challenges/0_playground/*
