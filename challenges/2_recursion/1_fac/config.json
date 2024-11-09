@@ -1,0 +1,12 @@
+{
+  "friendlyName": "Fakultät",
+  "difficulty": "1",
+  "shortDescription": "Berechne die Fakultät einer Zahl rekursiv.",
+  "templates": [
+    {
+      "title": "Beispielcode:",
+      "classname": "Main",
+      "content": " public class Main {\n    public int rec_fac(int n) {\n        // Hier kommt dein Code hin\n        return -1;\n    }\n}"
+    }
+  ]
+}
