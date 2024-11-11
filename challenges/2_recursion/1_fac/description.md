@@ -6,7 +6,7 @@ $5!=5*4*3*2*1=120$
 Verallgemeinert ist die Fakultät von $n$ also \
 $n!=n*(n-1)*(n-2)*\dots*2*1$ 
 
-Basierend darauf ergibt sich die rekursive Definition\
+Basierend darauf ergibt sich die rekursive Definition
 $$
 \begin{equation*}
     n!=
@@ -15,7 +15,7 @@ $$
         n*(n-1)!, &\forall n>1
     \end{cases}
 \end{equation*}
-$$
+$$ 
 
 _Reminder: Das Umgedrehte >A< ($\forall$) ist der **Allquantor** und steht für >für Alle<_
 

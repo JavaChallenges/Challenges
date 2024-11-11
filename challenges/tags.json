@@ -1,0 +1,62 @@
+[
+  {
+    "rekursion": "#FFB3BA"
+  },
+  {
+    "datenstrukturen": "#FFDFBA"
+  },
+  {
+    "algorithmen": "#FFFFBA"
+  },
+  {
+    "oop": "#BAFFC9"
+  },
+  {
+    "mathematik": "#BAE1FF"
+  },
+  {
+    "sortieren": "#D4BAFF"
+  },
+  {
+    "suchen": "#FFB3E6"
+  },
+  {
+    "graphen": "#B3FFFF"
+  },
+  {
+    "bäume": "#FFB3FF"
+  },
+  {
+    "hashing": "#B3FFB3"
+  },
+  {
+    "stack": "#FFCCCB"
+  },
+  {
+    "queue": "#FFDAB9"
+  },
+  {
+    "heap": "#FFFACD"
+  },
+  {
+    "linkedlist": "#E6E6FA"
+  },
+  {
+    "bitmanipulation": "#F0FFF0"
+  },
+  {
+    "geometrie": "#F5F5DC"
+  },
+  {
+    "wahrscheinlichkeit": "#FFE4E1"
+  },
+  {
+    "kombinatorik": "#F0FFFF"
+  },
+  {
+    "logik": "#FAFAD2"
+  },
+  {
+    "genetischealgorithmen": "#E0FFFF"
+  }
+]
