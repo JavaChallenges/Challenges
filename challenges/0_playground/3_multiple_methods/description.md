@@ -1,20 +1,17 @@
-Einfachste Form einer Challenge. Es wird eine einzelne Klasse erstellt, die eine Methode implementiert, welche getestet wird.
+Implementation einer einzelnen Klasse mit mehreren Methoden. 
 
 ### config.json
 ```json
 {
   "friendlyName": "Beispiel mehrere Methoden",
   "difficulty": "3",
+  "shortDescription": "Beispiel für eine Klasse mit mehreren Methoden",
+  "tags": ["beispiel"],
   "templates": [
     {
-      "title": "Main.class:",
+      "title": "Deine Lösung:",
       "classname": "Main",
-      "content": "public class Main {\n    public void method1() {\n        //Implementierung Methode 1\n    }\n}"
-    },
-    {
-      "title": "Additional.class:",
-      "classname": "Additional",
-      "content": "public class Additional {\n    public void method2() {\n        //Implementierung Methode 2\n    }\n}"
+      "content": "public class Main {\n    public void method1() {\n        //Implementierung Methode 1\n    }\n    public void method2() {\n        //Implementierung Methode 2\n    }\n}"
     }
   ]
 }

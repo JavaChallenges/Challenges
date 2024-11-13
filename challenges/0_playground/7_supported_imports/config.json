@@ -2,6 +2,7 @@
   "friendlyName": "Java Klasse mit Importen",
   "difficulty": "3",
   "shortDescription": "Beispiel für eine einfache Java Klasse mit Importen",
+  "tags": ["beispiel"],
   "templates": [
     {
       "title": "Deine Lösung:",

@@ -2,6 +2,7 @@
   "friendlyName": "Beispiel mehrere Methoden",
   "difficulty": "3",
   "shortDescription": "Beispiel für eine Klasse mit mehreren Methoden",
+  "tags": ["beispiel"],
   "templates": [
     {
       "title": "Deine Lösung:",

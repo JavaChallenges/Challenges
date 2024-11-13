@@ -26,7 +26,7 @@ public class Main {
 }
 ```
 
-### Single failing test
+### Einzelner oder mehrere failing test
 ```java
 public class Main {
     public int method1() {
@@ -40,7 +40,7 @@ public class Main {
 ```
 
 
-### All tests failing 
+### Alle tests failing 
 ```java
 public class Main {
     public int method1() {
@@ -49,6 +49,23 @@ public class Main {
     
     public int method2() {
         return 1; //should return 2
+    }
+}
+```
+
+### Test der einen Timeout hat
+```java
+public class Main {
+    public int method1() {
+        int i = Integer.MAX_VALUE;
+        while(i > Integer.MIN_VALUE) {
+            // Künstlich lange laufzeit
+        }
+        return 1;
+    }
+    
+    public int method2() {
+        return 2;
     }
 }
 ```

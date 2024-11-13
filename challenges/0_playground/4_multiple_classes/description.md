@@ -1,20 +1,22 @@
-Einfachste Form einer Challenge. Es wird eine einzelne Klasse erstellt, die eine Methode implementiert, welche getestet wird.
+Beispiel für eine Challenge mit mehreren Klassen. Diese sind in diesem Fall über externe Dateien definiert.
 
 ### config.json
 ```json
 {
   "friendlyName": "Beispiel mehrere Klassen",
   "difficulty": "4",
+  "shortDescription": "Beispiel für eine Aufgabe mit mehreren Klassen",
+  "tags": ["beispiel"],
   "templates": [
     {
-      "title": "Main.class:",
+      "title": "Main.java:",
       "classname": "Main",
-      "content": "public class Main {\n    public void method1() {\n        //Implementierung Methode 1\n    }\n}"
+      "content": "Main.java"
     },
     {
-      "title": "Additional.class:",
+      "title": "Additional.java:",
       "classname": "Additional",
-      "content": "public class Additional {\n    public void method2() {\n        //Implementierung Methode 2\n    }\n}"
+      "content": "Additional.java"
     }
   ]
 }

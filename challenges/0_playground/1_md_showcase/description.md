@@ -46,6 +46,21 @@ public class HelloWorld {
 ### Inline Code
 Here is some `inline code`.
 
+
+### $\LaTeX$ Block
+$$$
+\begin{equation*}
+n!=
+\begin{cases}
+1,&n=0, n=1\\
+n\cdot(n-1)!, &\forall n>1
+\end{cases}
+\end{equation*}
+$$$
+
+### Inline $\LaTeX$
+$E=mc^2$
+
 ## Blockquotes
 > This is a blockquote.
 >

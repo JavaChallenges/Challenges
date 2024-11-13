@@ -2,6 +2,7 @@
   "friendlyName": "Fehlertypen",
   "difficulty": "5",
   "shortDescription": "Beispielansicht für die verschiedenen Fehlertypen",
+  "tags": ["beispiel"],
   "templates": [
     {
       "title": "Beispielcode:",

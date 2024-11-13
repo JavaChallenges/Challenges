@@ -1,0 +1,13 @@
+{
+  "friendlyName": "System Out Darstellung",
+  "difficulty": "3",
+  "shortDescription": "Beispiel dafür wie System.out dargestellt wird",
+  "tags": ["beispiel"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": "public class Main {\n    public void method(String message) {\n        System.out.println(message + \" \" + message.length());\n    }\n}"
+    }
+  ]
+}

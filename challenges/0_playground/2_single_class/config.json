@@ -2,6 +2,7 @@
   "friendlyName": "Beispiel einfache Javaklasse",
   "difficulty": "2",
   "shortDescription": "Beispiel für eine einfache Javaklasse",
+  "tags": ["beispiel"],
   "templates": [
     {
       "title": "Deine Lösung:",
