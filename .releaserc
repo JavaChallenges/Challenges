@@ -35,33 +35,6 @@
 			{
 				"changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
 			}
-		],
-		[
-			"@semantic-release/github",
-			{
-				"assets": "./challenges/VERSION"
-			}
-		],
-        [
-          "semantic-release-replace-plugin",
-          {
-            "replacements": [
-              {
-                "files": ["./challenges/VERSION"],
-                "from": "VERSION",
-                "to": "${nextRelease.version}",
-                "results": [
-                  {
-                    "file": "./challenges/VERSION",
-                    "hasChanged": true,
-                    "numMatches": 1,
-                    "numReplacements": 1
-                  }
-                ],
-                "countMatches": true
-              }
-            ]
-          }
-        ]
+		]
     ]
 }
