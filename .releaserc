@@ -39,7 +39,7 @@
 		[
 			"@semantic-release/github",
 			{
-				"assets": "pack/*.tgz"
+				"assets": "./challenges/*"
 			}
 		],
         [
@@ -47,12 +47,12 @@
           {
             "replacements": [
               {
-                "files": ["VERSION"],
+                "files": ["./challenges/VERSION"],
                 "from": "VERSION",
                 "to": "${nextRelease.version}",
                 "results": [
                   {
-                    "file": "VERSION",
+                    "file": "./challenges/VERSION",
                     "hasChanged": true,
                     "numMatches": 1,
                     "numReplacements": 1
