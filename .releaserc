@@ -39,12 +39,29 @@
 		[
 			"@semantic-release/github",
 			{
-				"assets": {
-                    "path": [
-                        "VERSION"
-                    ]
-                }
+				"assets": "pack/*.tgz"
 			}
-		]
-	]
+		],
+        [
+          "semantic-release-replace-plugin",
+          {
+            "replacements": [
+              {
+                "files": ["VERSION"],
+                "from": "VERSION",
+                "to": "${nextRelease.version}",
+                "results": [
+                  {
+                    "file": "VERSION",
+                    "hasChanged": true,
+                    "numMatches": 1,
+                    "numReplacements": 1
+                  }
+                ],
+                "countMatches": true
+              }
+            ]
+          }
+        ]
+    ]
 }

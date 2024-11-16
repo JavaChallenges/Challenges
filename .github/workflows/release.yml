@@ -23,13 +23,6 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - uses: 1arp/create-a-file-action@0.4.5
-        with:
-          path: './'
-          isAbsolutePath: false
-          file: 'VERSION'
-          content: |
-            ${{ github.ref_name }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
