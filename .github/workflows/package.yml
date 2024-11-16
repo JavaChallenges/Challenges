@@ -29,7 +29,7 @@ jobs:
           echo "${{ secrets.ARTIFACT_SSH_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.ARTIFACT_HOST }} > ~/.ssh/known_hosts
       - name: connect and pull
-        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "./update_challenges.sh && exit"
+        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "./javachallengeSkripts/update_challenges.sh && exit"
       - name: cleanup
         run: rm -rf ~/.ssh
   deploy-prerelease:
@@ -44,6 +44,6 @@ jobs:
           echo "${{ secrets.ARTIFACT_SSH_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.ARTIFACT_HOST }} > ~/.ssh/known_hosts
       - name: connect and pull
-        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "./update_challenges_indev.sh && exit"
+        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "./javachallengeSkripts/update_challenges_indev.sh && exit"
       - name: cleanup
         run: rm -rf ~/.ssh
