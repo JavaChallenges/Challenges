@@ -9,16 +9,16 @@
     "algorithmen": "#FFFFBA"
   },
   {
-    "oop": "#BAFFC9"
+    "vererbung": "#BAFFC9"
+  },
+  {
+    "polymorphie": "#F5F5DC"
   },
   {
     "mathematik": "#BAE1FF"
   },
   {
-    "sortieren": "#D4BAFF"
-  },
-  {
-    "suchen": "#FFB3E6"
+    "suchen-und-sortieren": "#D4BAFF"
   },
   {
     "graphen": "#B3FFFF"
@@ -45,10 +45,7 @@
     "bitmanipulation": "#F0FFF0"
   },
   {
-    "geometrie": "#F5F5DC"
-  },
-  {
-    "wahrscheinlichkeit": "#FFE4E1"
+    "zufallswerte": "#FFE4E1"
   },
   {
     "kombinatorik": "#F0FFFF"

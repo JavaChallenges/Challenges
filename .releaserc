@@ -22,8 +22,7 @@
               { "type": "ci", "release": "patch" },
               { "type": "build", "release": "patch" },
               { "type": "revert", "release": "patch" },
-              { "type": "docs", "scope": "README", "release": "patch" },
-              { "type": "docs", "scope": "*", "release": false },
+              { "type": "docs", "release": false },
               { "type": "refactor", "release": "patch" },
               { "scope": "no-release", "release": false }
             ]
@@ -35,12 +34,6 @@
 			{
 				"changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file. See\n[Conventional Commits](https://conventionalcommits.org) for commit guidelines."
 			}
-		],
-		[
-			"@semantic-release/github",
-			{
-				"assets": "pack/*.tgz"
-			}
 		]
-	]
+    ]
 }
