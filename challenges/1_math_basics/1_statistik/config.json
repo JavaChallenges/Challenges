@@ -2,6 +2,7 @@
   "friendlyName": "Statistik",
   "difficulty": "2",
   "shortDescription": "Berechne die Summe und Anzahl aller Zahlen, die durch 2 oder 7 teilbar sind.",
+  "tags": ["mathematik"],
   "templates": [
     {
       "title": "Beispielcode:",

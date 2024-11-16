@@ -1,0 +1,16 @@
+{
+  "friendlyName": "Java Klasse mit Importen",
+  "difficulty": "3",
+  "shortDescription": "Beispiel für eine einfache Java Klasse mit Importen",
+  "tags": ["beispiel"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": "import java.util.*;\n\npublic class Main {\n    public void method() {\n        //Schreibe deinen Code hier\n    }\n}",
+      "whitelist": [
+        "java.util"
+      ]
+    }
+  ]
+}
