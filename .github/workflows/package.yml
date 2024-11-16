@@ -1,13 +1,23 @@
-name: docker-build-and-publish
+#
+name: Create and deploy Docker image
 
+# Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
-    branches:
-      - 'master'
+    # Pattern matched against refs/tags
+    tags:
+      - '**'           # Push events to every tag not containing /
 
+# Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+# There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
-  deploy:
-    name: deploy image
+  deploy-production:
+    name: Deploy to production
+    if: ${{ !contains(github.ref, 'development') }}
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +28,22 @@ jobs:
           install -m 600 -D /dev/null ~/.ssh/id_rsa
           echo "${{ secrets.ARTIFACT_SSH_KEY }}" > ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.ARTIFACT_HOST }} > ~/.ssh/known_hosts
-      - name: connect and restart
-        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "cd ${{ secrets.APP_PATH }} && docker compose down && docker compose up -d && exit"
+      - name: connect and pull
+        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "./update_challenges.sh && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh
+  deploy-prerelease:
+    name: Deploy to prerelease
+    if: ${{ contains(github.ref, 'development') }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: install ssh keys
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.ARTIFACT_SSH_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.ARTIFACT_HOST }} > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.USER }}@${{ secrets.ARTIFACT_HOST }} "./update_challenges_indev.sh && exit"
       - name: cleanup
         run: rm -rf ~/.ssh
