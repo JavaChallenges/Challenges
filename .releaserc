@@ -39,7 +39,11 @@
 		[
 			"@semantic-release/github",
 			{
-				"assets": "pack/*.tgz"
+				"assets": {
+                    "path": [
+                        "VERSION"
+                    ]
+                }
 			}
 		]
 	]
