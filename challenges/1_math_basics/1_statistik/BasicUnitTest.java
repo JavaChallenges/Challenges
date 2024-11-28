@@ -47,7 +47,7 @@ public class BasicUnitTest {
         );
     }
 
-    @RepeatedTest(value = 5, name = "{displayName} {currentRepetition}/{totalRepetitions}")
+    @RepeatedTest(value = 5, name = "{currentRepetition}/{totalRepetitions}")
     @DisplayName("Teste Zufallszahlen")
     void testRandomMax() {
 

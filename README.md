@@ -4,6 +4,8 @@
 ```plaintext
 └── challenges                    <- Root-Verzeichnis für alle Challenges
     ├── description.md            <- Textbeschreibung für die Übersichtsseite
+    ├── tags.json                 <- Definition der Tags die für die Filterung der Challenges verwendet werden
+    ├── pom.xml                   <- Maven Konfiguration für für alle Challenges
     └── 0_category                <- Kategorie-Verzeichnis
         ├── config.yml            <- Konfiguration für Kategorie-Übersichtsseite
         ├── description.md        <- Textbeschreibung für die Kategoriespezifische Übersichtsseite
@@ -14,11 +16,41 @@
             └── templates         <- (OPTIONAL) Codevorlagen für die Challenge als .java Dateien
                 └── template.java <- (OPTIONAL) Codevorlagen als .java Datei
 ```
-### description.md
-Alle .md Dateien werden auf der Website vollständig Markdown Complient abgebildetm bei Links zu Ankerpunkten kann es aber unter Umständen zu unverhersehbarem scollverhalten kommen, eine Verwendung davon wird also ohne intensives Testen abgeraten. Weiterhin ist die Implementation des Markdowninterpreters auf der Website dazu fähig LaTex Math Mode zu interpretieren. Dieser wird mit `$ %Latex Math Mode $` verwendet.
+
+### *.md
+Alle .md Dateien werden auf der Website vollständig Markdown Compliant abgebildetem bei Links zu Ankerpunkten kann es aber unter Umständen zu unvorhersehbarem Scrollverhalten kommen, eine Verwendung davon wird also ohne intensives Testen abgeraten. Weiterhin ist die Implementation des Markdown interpreters auf der Website dazu fähig LaTex Math Mode zu interpretieren. Dieser wird mit `$ %Latex Math Mode $` in inline Modus oder mit 
+```LaTex
+$$
+\begin{equation}
+\text{Latex Math Mode}
+\end{equation}
+$$
+```
+im Block Modus verwendet.
+
+### Challenge (Root) Verzeichnis
+Das Challenge Root Verzeichnis enthält:
+- `description.md` für die Textbeschreibung auf der Übersichtsseite.
+- `tags.json` für die Definition der Tags, die für die Filterung der Challenges verwendet werden.
+- `pom.xml` für die Maven Konfiguration, die für alle Challenges verwendet wird.
+
+#### tags.json
+```json
+{
+  "tags": [
+    {
+      "name": "beispiel",
+      "color": "#FF0000"
+    }
+  ]
+}
+```
+- `name` Name des Tags, der auf der Website angezeigt wird
+- `color` Farbe des Tags, die auf der Website angezeigt wird
+
 
 ### Kategorieverzeichnis
-Das Kategorieverzeichnis enthält:
+Kategorieverzeichnisse enthalten:
 - Mindestens ein funktionierendes [Challengeverzeichnis](#challengeverzeichnis)
 - `config.yml` der unten folgenden Form
 - `description.md` die die Kategorie ausführlicher beschreibt.
@@ -31,7 +63,7 @@ Das Kategorieverzeichnis enthält:
 }
 ```
 - `friendlyName` der Namen der Kategorie, welcher in UI Elementen angezeigt wird, welche diese Kategorie referenzieren.
-- `shortDescription` Ist eine Kurzbeschreibung der Kategorie die auf der Übersichtsseite angezeigt wird.
+- `shortDescription` Ist eine Kurzbeschreibung der Kategorie, die auf der Übersichtsseite angezeigt wird.
 
 ### Challengeverzeichnis
 Das Challengeverzeichnis enthält:
@@ -61,12 +93,12 @@ Das Challengeverzeichnis enthält:
 }
 ```
 - `friendlyName` der Namen der Challenge, welcher in UI Elementen angezeigt wird, welche diese Challenge referenzieren.
-- `difficulty` Zahl von 1-5 die eine grobe Einschätzung des Schwierigkeitsgrad der Challenge geben soll. Dies wird auf der Website an verschiedenen Stellen in Form von Sternen repräsentiert.
+- `difficulty` Zahl von 1-5 die eine grobe Einschätzung des Schwierigkeitsgrads der Challenge geben soll. Dies wird auf der Website an verschiedenen Stellen in Form von Sternen repräsentiert.
 - `shortDescription` Ist eine Kurzbeschreibung die auf allen Übersichtsseiten auf der diese Challenge auftaucht, die in kurzen Worten beschreiben soll, was den Nutzer in dieser Challenge erwartet
-- `tags` Liste von Tags die die Challenge beschreiben. Diese werden auf der Website als Filtermöglichkeit neben den Kategorien für die Challenges angeboten und sollten sich daher von den Katgeorienamen unterscheiden.
-- `templates` Liste für die Codeblöcke in die der Nutzer seinen Code einfügen soll, die diese Form erfüllen:
+- `tags` Liste von Tags, die die Challenge beschreiben. Diese werden auf der Website als Filtermöglichkeit neben den Kategorien für die Challenges angeboten und sollten sich daher von den Kategorienamen unterscheiden.
+- `templates` Liste für die Codeblöcke, in die der Nutzer seinen Code einfügen soll, die diese Form erfüllen:
   - `title` Freies textfeld in dem Kontextbasiert eingetragen werden kann, was im folgenden Codeblock eingetragen werden kann. Bei einfachen Aufgaben bietet sich etwas wie "Deine Lösung" an. Bei Aufgaben mit mehreren Klassen, bietet es sich an hier den entsprechenden Klassennamen einzutragen
-  - `classname` Name der Klasse in der der Code aus diesem Codeblock gespeichert werden soll. Dies ist vor allem für die Automatischen Unittests relevant, damit diese den Code auch richtig zuordnen können.
+  - `classname` Name der Klasse, in der der Code aus diesem Codeblock gespeichert werden soll. Dies ist vor allem für die Automatischen Unittests relevant, damit diese den Code auch richtig zuordnen können.
   - `content` Vorgegebener Code der in den Codeblock eingefügt wird. Dieser kann beliebig lang sein und sollte den Nutzer bei der Bearbeitung der Challenge unterstützen um bspw. simple Tipparbeit zu ersparen, um den Nutzer auf die richtige Spur zu bringen oder ihm Hilfsklassen oder -methoden zur Verfügung zu stellen.
     - "inline" Code, wie in der ersten Variante im oben gezeigten Beispiel
     - In eine Java Datei ausgelagert werden, was sich besonders bei längeren Codevorgaben anbietet. Diese Datei muss im `templates` Ordner der Challenge abgelegt werden und in diesem Abschnitt mit dem Namen der Datei referenziert werden.
