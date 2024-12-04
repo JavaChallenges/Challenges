@@ -1,0 +1,13 @@
+{
+  "friendlyName": "(Un-)Gerade Zahlen",
+  "difficulty": "1",
+  "shortDescription": "Schreibe zwei Methoden, die jeweils prüfen ob eine Zahl n gerade, bzw. ungerade ist.",
+  "tags": ["mathematik"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": " public class Main {\n    public boolean isEven(int n) {\n        //Prüfe ob die Zahl gerade ist\n        return false;\n    }\n\n    public boolean isOdd(int n) {\n        //Prüfe ob die Zahl ungerade ist\n        return false;\n    }\n}"
+    }
+  ]
+}

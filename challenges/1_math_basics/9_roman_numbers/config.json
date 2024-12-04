@@ -1,0 +1,13 @@
+{
+  "friendlyName": "Römische Zahlen",
+  "difficulty": "4",
+  "shortDescription": "Anhand einer gegebenen Zahl, soll die Zahl in römischer Schreibweise zurückgeben werden.",
+  "tags": ["mathematik"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": " public class Main {\n    public String toRomanNumber(int n) {\n        // Hier kommt dein Code hin\n        return \"\";\n    }\n}"
+    }
+  ]
+}

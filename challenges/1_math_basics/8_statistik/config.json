@@ -5,7 +5,7 @@
   "tags": ["mathematik"],
   "templates": [
     {
-      "title": "Beispielcode:",
+      "title": "Deine Lösung:",
       "classname": "Main",
       "content": " public class Main {\n    public int calcSumAndCountAllNumbersDivBy_2_Or_7(int max) {\n        // Hier kommt dein Code hin\n        return -1;\n    }\n}"
     }

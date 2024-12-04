@@ -1,0 +1,13 @@
+{
+  "friendlyName": "Dezimal zu Hexadezimal",
+  "difficulty": "2",
+  "shortDescription": "Schreibe eine Methode die Dezimalzahlen in Hexadezimalzahlen umwandelt.",
+  "tags": ["mathematik"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": " public class Main {\n    public int toHex(int n) {\n        //Prüfe ob die Zahl gerade ist\n        return false;\n    }\n}"
+    }
+  ]
+}
