@@ -10,7 +10,9 @@ Schreibe eine Methode
 ```java
 List<Integer> calcPerfectNumbers(int upperLimit);
 ```
-welche eine Liste von `perfect numbers` bis zu dem Wert der eingegebenen Zahl berechnet.</br>
+welche eine Liste von `perfect numbers` bis zu dem Wert der eingegebenen Zahl berechnet.
+<br>
+
 Wichtig!: <br>
 Die perfekten Zahlen sind alles natürliche Zahlen ausgehend von 1.
 

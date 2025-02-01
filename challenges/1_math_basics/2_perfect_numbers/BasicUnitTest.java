@@ -44,8 +44,8 @@ public class BasicUnitTest {
 
     static Stream<Arguments> tableProvider() {
         return Stream.of(
-                Arguments.arguments(1000, new ArrayList<>(Arrays.asList(6, 28, 496))),
-                Arguments.arguments(10000, new ArrayList<>(Arrays.asList(6, 28, 496, 8128)))
+                Arguments.arguments(1000, List.of(6, 28, 496))),
+                Arguments.arguments(10000, List.of(6, 28, 496, 8128)))
         );
     }
 
