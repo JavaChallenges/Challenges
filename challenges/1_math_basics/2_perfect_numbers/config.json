@@ -1,0 +1,12 @@
+{
+  "friendlyName": "Perfect Numbers",
+  "difficulty": "2",
+  "tags": ["mathematik"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": " public class Main {\n    public List<Integer> calcPerfectNumbers(int upperLimit) {\n        // Hier kommt dein Code hin\n        return -1;\n    }\n}"
+    }
+  ]
+}
