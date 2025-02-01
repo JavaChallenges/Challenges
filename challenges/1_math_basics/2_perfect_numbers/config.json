@@ -1,6 +1,7 @@
 {
   "friendlyName": "Perfect Numbers",
   "difficulty": "2",
+  "shortDescription": "Berechne alle natürlichen perfekten Zahlen von 1 bis zum oberen Limit",
   "tags": ["mathematik"],
   "templates": [
     {
