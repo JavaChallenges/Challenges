@@ -6,14 +6,11 @@ Per Definition ist eine natürliche Zahl `perfekt`, wenn ihr Wert gleich der Sum
 
 ### Aufgabenstellung
 
-Schreibe eine Methode 
-```java
-List<Integer> calcPerfectNumbers(int upperLimit);
-```
-welche eine Liste von `perfect numbers` bis zu dem Wert der eingegebenen Zahl berechnet.
+Schreibe eine Methode `List<Integer> calcPerfectNumbers(int upperLimit)`
+welche eine Liste von perfekten Zahlen bis zu dem Wert der eingegebenen Zahl berechnet.
 <br>
 
-Wichtig!: <br>
+Hinweis: <br>
 Die perfekten Zahlen sind alles natürliche Zahlen ausgehend von 1.
 
 ### Beispiel
