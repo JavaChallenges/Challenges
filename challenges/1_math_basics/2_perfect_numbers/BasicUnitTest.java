@@ -16,7 +16,6 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//TODO: Write a test for random number inputs
 public class BasicUnitTest {
 
     private Main main;
@@ -59,5 +58,42 @@ public class BasicUnitTest {
                 main.calcPerfectNumbers(upperLimit);
             });
         });
+    }
+
+    @RepeatedTest(value = 5, name = "{currentRepetition}/{totalRepetitions}")
+    @DisplayName("Teste Zufallszahlen")
+    void testRandomMax() {
+        assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {
+            int max = randomInt();
+            int result = main.calcPerfectNumbers(max);
+            assertEquals(calcPerfectNumbers(max), result);
+        });
+    }
+
+    private static boolean isPerfectNumberSimple(final int number) {
+        int sumOfMultipliers = 1;
+        for(int i = 2; i <= number/2; i++) {
+            if(number%i == 0){
+                sumOfMultipliers += i;
+            }
+        }
+        return sumOfMultipliers == number;
+    }
+
+    private static List<Integer> calcPerfectNumbers(final int maxExclusive){
+        final List<Integer> results = new ArrayList<>();
+        for(int i = 2; i < maxExclusive; i++){
+            if(isPerfectNumberSimple(i)){
+                results.add(i);
+            }
+        }
+        return results;
+    }
+
+    private int randomInt(){
+        Random random = new Random();
+        int min = 8;
+        int max = 50;
+        return random.nextInt(max - min + 1) + min;
     }
 }

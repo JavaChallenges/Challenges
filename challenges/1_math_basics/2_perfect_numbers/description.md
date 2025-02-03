@@ -1,6 +1,6 @@
 ### Beschreibung
 
-Per Definition ist eine natürliche Zahl `perfekt`, wenn ihr Wert gleich der Summe all ihrer Teiler ist. Dies trifft zum Beispiel zu auf 6:
+Nach Definition ist eine natürliche Zahl `perfekt`, wenn ihr Wert gleich der Summe all ihrer Teiler ist. Dies trifft zum Beispiel zu auf 6:
 
 > $1+2+3=6$
 
@@ -16,7 +16,7 @@ Die perfekten Zahlen sind alles natürliche Zahlen ausgehend von 1.
 ### Beispiel
 
 | Input | Result          |
-| ----- |-----------------|
+|-------|-----------------|
 | 1000  | [6,28,496]      |
 | 10000 | [6,28,496,8128] |
 
