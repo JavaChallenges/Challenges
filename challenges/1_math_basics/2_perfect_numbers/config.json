@@ -1,0 +1,16 @@
+{
+  "friendlyName": "Perfect Numbers",
+  "difficulty": "2",
+  "shortDescription": "Berechne alle natürlichen perfekten Zahlen von 1 bis zum oberen Limit",
+  "tags": ["mathematik"],
+  "templates": [
+    {
+      "title": "Deine Lösung:",
+      "classname": "Main",
+      "content": "import java.util.*;\n\npublic class Main {\n    public static List<Integer> calcPerfectNumbers(int upperLimit) {\n   List<Integer> perfectNumbers = new ArrayList<>();\n\n     //Schreibe deinen Code hier\n\n  return perfectNumbers;\n  }\n}",
+      "whitelist": [
+        "java.util"
+      ]
+    }
+  ]
+}
