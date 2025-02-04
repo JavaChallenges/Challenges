@@ -1,3 +1,7 @@
 ### Beschreibung
 
-Schreibe eine Methode `long fibRec(int maxIndex)` welche rekursiv die Fibonacci Zahlen bis zum eingegeben Index `maxIndex` berechnet.
+Schreibe eine Methode 
+```java
+int fibRec(int index);
+``` 
+welche rekursiv die Fibonacci Zahlen bis zum eingegeben Index berechnet.

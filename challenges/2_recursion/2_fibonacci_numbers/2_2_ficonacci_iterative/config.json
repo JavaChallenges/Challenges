@@ -7,7 +7,7 @@
     {
       "title": "Beispielcode:",
       "classname": "Main",
-      "content": "public class Main {\n    public int rec_fac(int n) {\n        // Hier kommt dein Code hin\n        return -1;\n    }\n}"
+      "content": "public class Main {\n    public int fibIter(int n) {\n        // Hier kommt dein Code hin\n        return -1;\n    }\n}"
     }
   ]
 }
