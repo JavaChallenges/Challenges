@@ -10,9 +10,6 @@ import java.io.PrintStream;
 import java.time.Duration;
 import java.util.Random;
 import java.util.stream.Stream;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,29 +19,35 @@ public class BasicUnitTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
-    @BeforeEach
-    public void setUpStreams() {
-        main = new Main();
-        System.setOut(new PrintStream(outContent));
-    }
-
     @AfterEach
     public void restoreStreams() {
         System.setOut(originalOut);
     }
 
-    @ParameterizedTest(name = "Eingabe: {0} ==> Erwartete Liste: {1}")
+    @BeforeEach
+    public void setUpStreams() {
+        main = new Main();
+    }
+    @ParameterizedTest(name = "Eingabe: {0} ==> Erwartetes Ergebniss: {1}")
     @MethodSource("tableProvider")
     @DisplayName("Teste Werte aus der Tabelle: ")
-    void testWithMultiArgMethodSource(int upperLimit, List<Integer> perfectNumbers) {
-        main.calcPerfectNumbers(upperLimit);
-        assertEquals(perfectNumbers.toString(), outContent.toString().trim());
+    void testWithMultiArgMethodSource(int index, int fibonacciNumber) {
+        assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {
+            int result = main.fibIter(index);
+            assertEquals(fibonacciNumber, result);
+        });
     }
 
     static Stream<Arguments> tableProvider() {
         return Stream.of(
-                Arguments.arguments(1000, List.of(6, 28, 496))),
-                Arguments.arguments(10000, List.of(6, 28, 496, 8128)))
+                Arguments.arguments(1, 1)),
+        Arguments.arguments(2, 1)),
+        Arguments.arguments(3, 2)),
+        Arguments.arguments(4, 3)),
+        Arguments.arguments(5, 5)),
+        Arguments.arguments(6, 8)),
+        Arguments.arguments(7, 13)),
+        Arguments.arguments(8, 21))
         );
     }
 
@@ -52,10 +55,10 @@ public class BasicUnitTest {
     @ValueSource(ints = {-1})
     @NullSource
     @DisplayName("Teste ungültige Eingaben")
-    public void testInvalidParameter(int upperLimit) {
+    public void testInvalidParameter(int index) {
         Assertions.assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {  //FAIL asap timeout occurs
             assertThrows(IllegalArgumentException.class, () -> {
-                main.calcPerfectNumbers(upperLimit);
+                main.fibIter(index);
             });
         });
     }
@@ -64,33 +67,27 @@ public class BasicUnitTest {
     @DisplayName("Teste Zufallszahlen")
     void testRandomMax() {
         assertTimeoutPreemptively(Duration.ofSeconds(3), () -> {
-            int max = randomInt();
-            int result = main.calcPerfectNumbers(max);
-            assertEquals(calcPerfectNumbers(max), result);
+            int index = randomInt();
+            int result = main.fibIter(index);
+            assertEquals(fibIter(index), result);
         });
     }
 
-    private static boolean isPerfectNumberSimple(final int number) {
-        int sumOfMultipliers = 1;
-        for(int i = 2; i <= number/2; i++) {
-            if(number%i == 0){
-                sumOfMultipliers += i;
-            }
+    private int fibIter(final int index){
+        if(n <= 0){
+            throw new IllegalArgumentException("fibRec error: Wähle einen Index >= 1");
         }
-        return sumOfMultipliers == number;
-    }
-
-    private static List<Integer> calcPerfectNumbers(final int maxExclusive){
-        final List<Integer> results = new ArrayList<>();
-        if(maxExclusive <= 0) {
-            throw new IllegalArgumentException();
+        if(n == 1 || n == 2){
+            return 1;
         }
-        for(int i = 2; i < maxExclusive; i++){
-            if(isPerfectNumberSimple(i)){
-                results.add(i);
-            }
+        int fibN_2 = 1;
+        int fibN_1 = 1;
+        for(int count = 2; count < index; count++) {
+            int fibN = fibN_1 + fibN_2;
+            fibN_2 = fibN_1;
+            fibN_1 = fibN;
         }
-        return results;
+        return fibN;
     }
 
     private int randomInt(){
