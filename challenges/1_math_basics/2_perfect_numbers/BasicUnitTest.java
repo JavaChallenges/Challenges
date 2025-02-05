@@ -82,6 +82,9 @@ public class BasicUnitTest {
 
     private static List<Integer> calcPerfectNumbers(final int maxExclusive){
         final List<Integer> results = new ArrayList<>();
+        if(maxExclusive <= 0) {
+            throw new IllegalArgumentException();
+        }
         for(int i = 2; i < maxExclusive; i++){
             if(isPerfectNumberSimple(i)){
                 results.add(i);

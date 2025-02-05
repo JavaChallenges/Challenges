@@ -7,7 +7,7 @@
     {
       "title": "Deine Lösung:",
       "classname": "Main",
-      "content": "import java.util.*;\n\npublic class Main {\n    public static List<Integer> calcPerfectNumbers(int upperLimit) {\n   List<Integer> perfectNumbers = new ArrayList<>();\n\n     //Schreibe deinen Code hier\n\n  return perfectNumbers;\n  }\n}",
+      "content": "import java.util.*;\n\npublic class Main {\n    public static List<Integer> calcPerfectNumbers(int upperLimit) {\n   List<Integer> perfectNumbers = new ArrayList<>();\n   if(upperLimit <= 0){\n       throw new IllegalArgumentException();\n   }\n\n     //Schreibe deinen Code hier\n\n   return perfectNumbers;\n  }\n}",
       "whitelist": [
         "java.util"
       ]
