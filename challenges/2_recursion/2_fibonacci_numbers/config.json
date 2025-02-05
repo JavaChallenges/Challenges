@@ -1,0 +1,6 @@
+{
+  "friendlyName": "Fibonacci",
+  "difficulty": "2",
+  "shortDescription": "Berechne Fibonacci-Zahlen rekursiv und iterativ",
+  "tags": ["rekursion", "mathematik"]
+}
